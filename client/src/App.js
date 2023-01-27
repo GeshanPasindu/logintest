@@ -1,23 +1,46 @@
-import logo from './logo.svg';
+
 import './App.css';
+import {useState} from 'react';
 
 function App() {
+ const [name,setName] = useState("");
+ const [age,setAge] = useState(0);
+ const [position,setPosition] = useState("");
+ const [country,setCountry] = useState("");
+ const [anualsal,setAnualsal] = useState(0);
+  const display = () =>{ 
+    console.log(name+age+position+country+anualsal)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <label>name:</label>
+      <input 
+      type='text'
+      onChange={(e) =>{setName(e.target.value)}}/>
+
+      <label> age:</label>
+      <input 
+      type='number'
+      onChange={(e) =>{setAge(e.target.value)}}/>
+    
+
+      <label> position:</label>
+      <input 
+      type='text'
+      onChange={(e) =>{setPosition(e.target.value)}}/>
+
+      <label> country:</label>
+      <input 
+      type='text'
+      onChange={(e) =>{setCountry(e.target.value)}}/>
+
+      <label> anual salary:</label>
+      <input 
+      type='text'
+      onChange={(e) =>{setAnualsal(e.target.value)}}/>
+      <button className ="App" onClick={display}>add employee</button>
+
     </div>
   );
 }
