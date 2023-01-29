@@ -16,7 +16,7 @@ const db = mysql.createConnection({
 });
 
 app.post('/create',(req,res) => {
-    console.log(req.body)
+     console.log(req.body)
     const name = req.body.name;
     const age = req.body.age;
     const position = req.body.position;
